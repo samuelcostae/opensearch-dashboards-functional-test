@@ -1,4 +1,4 @@
-const { defineConfig } = require('cypress')
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   defaultCommandTimeout: 60000,
@@ -12,7 +12,7 @@ module.exports = defineConfig({
   viewportHeight: 1320,
   env: {
     openSearchUrl: 'http://localhost:9200',
-    SECURITY_ENABLED: false,
+    SECURITY_ENABLED: true,
     AGGREGATION_VIEW: false,
     username: 'admin',
     password: 'admin',
@@ -27,8 +27,8 @@ module.exports = defineConfig({
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config)
+      return require('./cypress/plugins/index.js')(on, config);
     },
     baseUrl: 'http://localhost:5601',
   },
-})
+});
